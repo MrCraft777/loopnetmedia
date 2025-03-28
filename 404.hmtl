@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #c0d8f0, #ffffff 50%, #ffffff);
+            font-family: 'Verdana', sans-serif;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+
+        .container {
+            width: 600px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #97b2d1;
+            border-radius: 8px;
+            background: linear-gradient(to bottom, #ffffff, #e4eff9);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 90px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
+
+        .header img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .title-container {
+            flex-grow: 1;
+            margin-right: 40px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 5px;
+            font-weight: bold;
+            margin-left: -361px;
+        }
+
+        .line {
+            width: 90%;
+            height: 2px;
+            background-color: #333333;
+            margin-top: -5px;
+            margin-left: 23px;
+        }
+
+        .message {
+            font-size: 14px;
+            color: #555555;
+            margin-top: 15px;
+            margin-left: -142px;
+        }
+
+        .gear-icon {
+            margin-left: -10px;
+            width: 25px;
+            height: 25px;
+            background-image: url('https://i.imghippo.com/files/zd8003veA.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+    </style>
+    <title>Fehler 404</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="gear-icon"></div>
+            <div class="title-container">
+                <h1 class="title">Fehler 404</h1>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="message">
+            <p>Die angeforderte Seite wurde nicht gefunden.</p>
+        </div>
+    </div>
+</body>
+
+</html>
