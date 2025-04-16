@@ -1,98 +1,173 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="de">
 <head>
-    <style>
-        body {
-            margin: 0;
-            background: linear-gradient(to bottom, #c0d8f0, #ffffff 50%, #ffffff);
-            font-family: 'Verdana', sans-serif;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 50px;
-        }
+  <meta charset="UTF-8">
+  <title>Startseite :: LNMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- © 2020-2025 LoopnetMedia & MrCraft777. Alle Rechte vorbehalten. -->
+  <meta name="copyright" content="© 2020-2025 LoopnetMedia & MrCraft777">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
 
-        .container {
-            width: 600px;
-            padding: 20px;
-            text-align: center;
-            border: 2px solid #97b2d1;
-            border-radius: 8px;
-            background: linear-gradient(to bottom, #ffffff, #e4eff9);
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            position: relative;
-            height: 90px;
-        }
+    .loader-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-left: 20px;
-        }
+    #status {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      margin-bottom: 20px;
+    }
 
-        .header img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
+    .figure_top {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 0;
+      height: 0;
+    }
 
-        .title-container {
-            flex-grow: 1;
-            margin-right: 40px;
-        }
+    .dot {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
 
-        .title {
-            font-size: 18px;
-            color: #333333;
-            margin-bottom: 5px;
-            font-weight: bold;
-            margin-left: -361px;
-        }
+    .red { background-color: #D4202B; }
+    .black { background-color: #000; }
 
-        .line {
-            width: 90%;
-            height: 2px;
-            background-color: #333333;
-            margin-top: -5px;
-            margin-left: 23px;
-        }
+    .top    { --mt: -30px; --ml:   0px; }
+    .bottom { --mt:  30px; --ml:   0px; }
+    .left   { --mt:   0px; --ml: -30px; }
+    .right  { --mt:   0px; --ml:  30px; }
 
-        .message {
-            font-size: 14px;
-            color: #555555;
-            margin-top: 15px;
-            margin-left: -142px;
-        }
+    .top, .bottom, .left, .right {
+      margin-top: var(--mt);
+      margin-left: var(--ml);
+    }
 
-        .gear-icon {
-            margin-left: -10px;
-            width: 25px;
-            height: 25px;
-            background-image: url('https://i.imghippo.com/files/zd8003veA.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            margin-right: 10px;
-        }
-    </style>
-    <title>Fehler 404</title>
+    .animate-normal {
+      animation: moveNormal 3.7s linear infinite;
+    }
+
+    .animate-flip {
+      animation: moveWithFlip 3.7s linear infinite;
+    }
+
+    @keyframes moveNormal {
+      0% {
+        margin: var(--mt) var(--ml);
+        opacity: 1;
+        transform: rotateY(0deg);
+      }
+      25% {
+        margin: 0 0;
+        opacity: 0.2;
+        transform: rotateY(0deg);
+      }
+      30% {
+        margin: 0 0;
+        opacity: 0.2;
+        transform: rotateY(0deg);
+      }
+      60% {
+        margin: var(--mt) var(--ml);
+        opacity: 1;
+        transform: rotateY(180deg);
+      }
+      100% {
+        margin: var(--mt) var(--ml);
+        opacity: 1;
+        transform: rotateY(180deg);
+      }
+    }
+
+    @keyframes moveWithFlip {
+      0% {
+        margin-top: var(--mt);
+        margin-left: var(--ml);
+        transform: rotateY(0deg);
+        opacity: 1;
+      }
+      25% {
+        margin-top: 0;
+        margin-left: 0;
+        transform: rotateY(0deg);
+        opacity: 0.2;
+      }
+      30% {
+        margin-top: 0;
+        margin-left: 0;
+        transform: rotateY(0deg);
+        opacity: 0.2;
+      }
+      60% {
+        margin-top: var(--mt);
+        margin-left: var(--ml);
+        transform: rotateY(180deg);
+        opacity: 1;
+      }
+      100% {
+        margin-top: var(--mt);
+        margin-left: var(--ml);
+        transform: rotateY(180deg);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="gear-icon"></div>
-            <div class="title-container">
-                <h1 class="title">Fehler 404</h1>
-                <div class="line"></div>
-            </div>
-        </div>
-        <div class="message">
-            <p>Die angeforderte Seite wurde nicht gefunden.</p>
-        </div>
-    </div>
-</body>
 
+  <div class="loader-wrapper">
+    <div id="status">
+      <figure class="figure_top">
+        <div class="dot red top"></div>
+        <div class="dot red bottom"></div>
+        <div class="dot black left"></div>
+        <div class="dot black right"></div>
+      </figure>
+    </div>
+  </div>
+
+  <script>
+    function animateDots() {
+      const redDots = document.querySelectorAll('.dot.red');
+      const blackDots = document.querySelectorAll('.dot.black');
+
+      redDots.forEach(dot => {
+        dot.classList.remove('animate-normal');
+        void dot.offsetWidth;
+        dot.classList.add('animate-normal');
+      });
+
+      blackDots.forEach(dot => {
+        dot.classList.remove('animate-flip');
+        void dot.offsetWidth;
+        dot.classList.add('animate-flip');
+      });
+    }
+
+    function loopAnimation() {
+      animateDots();
+      setTimeout(() => {
+        loopAnimation();
+      }, 2700);
+    }
+
+    loopAnimation();
+  </script>
+</body>
 </html>
