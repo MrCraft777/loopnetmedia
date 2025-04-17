@@ -3,32 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Startseite :: LNM</title>
+    <!-- © 2020-2025 LoopnetMedia & MrCraft777. Alle Rechte vorbehalten. -->
+  <meta name="copyright" content="© 2020-2025 LoopnetMedia & MrCraft777">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- © 2020-2025 LoopnetMedia & MrCraft777. Alle Rechte vorbehalten. -->
   <meta name="copyright" content="© 2020-2025 LoopnetMedia & MrCraft777">
   <style>
     html, body {
       height: 100%;
       margin: 0;
       background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: 'Poppins', sans-serif;
-      position: relative;
     }
 
     .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      background-color: #fff;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .loader-wrapper.fade-out {
+      opacity: 0;
+      pointer-events: none;
     }
 
     #status {
       width: 150px;
       height: 150px;
       position: relative;
-      margin-bottom: 20px;
     }
 
     .figure_top {
@@ -68,76 +77,33 @@
     }
 
     @keyframes moveNormal {
-      0% {
-        margin: var(--mt) var(--ml);
-        opacity: 1;
-        transform: rotateY(0deg);
-      }
-      29% {
-        margin: 0 0;
-        opacity: 0.2;
-        transform: rotateY(0deg);
-      }
-      30% {
-        margin: 0 0;
-        opacity: 0.2;
-        transform: rotateY(0deg);
-      }
-      60% {
-        margin: var(--mt) var(--ml);
-        opacity: 1;
-        transform: rotateY(180deg);
-      }
-      100% {
-        margin: var(--mt) var(--ml);
-        opacity: 1;
-        transform: rotateY(180deg);
-      }
+      0% { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(0deg); }
+      29% { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
+      30% { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
+      60% { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
+      100% { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
     }
 
-@keyframes moveWithFlip {
-  0% {
-    margin-top: var(--mt);
-    margin-left: var(--ml);
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-  29% {
-    margin-top: 0;
-    margin-left: 0;
-    transform: rotateY(0deg);
-    opacity: 0.2;
-  }
-  30% {
-    margin-top: 0;
-    margin-left: 0;
-    transform: rotateY(0deg);
-    opacity: 0.2;
-  }
-  40% {
-    margin-top: var(--mt);
-    margin-left: var(--ml);
-    opacity: 1;
-    transform: rotateY(90deg);
-  }
-  60% {
-    margin-top: var(--mt);
-    margin-left: var(--ml);
-    transform: rotateY(180deg);
-    opacity: 1;
-  }
-  100% {
-    margin-top: var(--mt);
-    margin-left: var(--ml);
-    transform: rotateY(180deg);
-    opacity: 1;
-  }
-}
+    @keyframes moveWithFlip {
+      0% { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(0deg); opacity: 1; }
+      29% { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
+      30% { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
+      40% { margin-top: var(--mt); margin-left: var(--ml); opacity: 1; transform: rotateY(90deg); }
+      60% { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
+      100% { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
+    }
+
+    .content {
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
 
-  <div class="loader-wrapper">
+  <div class="loader-wrapper" id="loader">
     <div id="status">
       <figure class="figure_top">
         <div class="dot red top"></div>
@@ -146,6 +112,11 @@
         <div class="dot black right"></div>
       </figure>
     </div>
+  </div>
+
+  <div class="content">
+    <h1>404</h1>
+    <p>Diese Seite wurde nicht gefunden.</p>
   </div>
 
   <script>
@@ -168,12 +139,24 @@
 
     function loopAnimation() {
       animateDots();
-      setTimeout(() => {
-        loopAnimation();
-      }, 2500);
+      setTimeout(loopAnimation, 2500);
     }
 
     loopAnimation();
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+
+      const loadTime = Math.floor(Math.random() * 2000) + 2000;
+
+      setTimeout(() => {
+        loader.classList.add("fade-out");
+
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 700);
+      }, loadTime);
+    });
   </script>
 </body>
 </html>
