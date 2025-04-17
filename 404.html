@@ -60,7 +60,7 @@
     }
 
     .animate-normal {
-      animation: moveNormal 3.7s linear infinite;
+      animation: moveNormal 3.5s linear infinite;
     }
 
     .animate-flip {
@@ -73,7 +73,7 @@
         opacity: 1;
         transform: rotateY(0deg);
       }
-      25% {
+      29% {
         margin: 0 0;
         opacity: 0.2;
         transform: rotateY(0deg);
@@ -95,38 +95,44 @@
       }
     }
 
-    @keyframes moveWithFlip {
-      0% {
-        margin-top: var(--mt);
-        margin-left: var(--ml);
-        transform: rotateY(0deg);
-        opacity: 1;
-      }
-      25% {
-        margin-top: 0;
-        margin-left: 0;
-        transform: rotateY(0deg);
-        opacity: 0.2;
-      }
-      30% {
-        margin-top: 0;
-        margin-left: 0;
-        transform: rotateY(0deg);
-        opacity: 0.2;
-      }
-      60% {
-        margin-top: var(--mt);
-        margin-left: var(--ml);
-        transform: rotateY(180deg);
-        opacity: 1;
-      }
-      100% {
-        margin-top: var(--mt);
-        margin-left: var(--ml);
-        transform: rotateY(180deg);
-        opacity: 1;
-      }
-    }
+@keyframes moveWithFlip {
+  0% {
+    margin-top: var(--mt);
+    margin-left: var(--ml);
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  29% {
+    margin-top: 0;
+    margin-left: 0;
+    transform: rotateY(0deg);
+    opacity: 0.2;
+  }
+  30% {
+    margin-top: 0;
+    margin-left: 0;
+    transform: rotateY(0deg);
+    opacity: 0.2;
+  }
+  40% {
+    margin-top: var(--mt);
+    margin-left: var(--ml);
+    opacity: 1;
+    transform: rotateY(90deg);
+  }
+  60% {
+    margin-top: var(--mt);
+    margin-left: var(--ml);
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+  100% {
+    margin-top: var(--mt);
+    margin-left: var(--ml);
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+}
   </style>
 </head>
 <body>
@@ -164,7 +170,7 @@
       animateDots();
       setTimeout(() => {
         loopAnimation();
-      }, 2700);
+      }, 2500);
     }
 
     loopAnimation();
