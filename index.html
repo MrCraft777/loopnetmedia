@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoopnetMedia • Weclome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+    
+footer a {
+    position: relative;
+    color: #ffffff;  
+    text-decoration: none;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff; 
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover::after {
+    transform: scaleX(1);  
+}
+
+a:not(.footer-container a) {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+}
+
+a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.nav-button)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.nav-button):hover::after {
+    transform: scaleX(1);
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    ::selection {
+      background: #ffcc00;
+      color: #000;
+    }
+    h2 {
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+    }
+    hr.divider {
+      border: none;
+      border-top: 2px solid #ddd;
+      margin: 40px 0;
+    }
+    header {
+      background: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+      pointer-events: none;
+      user-select: none;
+      margin-top: 8px;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #333;
+      font-weight: bold;
+      padding: 10px 15px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    nav a:hover {
+      color: black;
+    }
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .language-switcher {
+  position: relative;
+  width: fit-content;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.language-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.arrow-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.language-switcher.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.underline {
+  height: 2px;
+  width: 60px;
+  background-color: #333;
+  margin-top: 2px;
+  position: relative;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 0;
+  width: 10px;
+  height: 2px;
+  background-color: #333;
+}
+
+.language-dropdown {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  z-index: 10;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.language-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.language-dropdown div {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.language-dropdown div:hover {
+  background: #f0f0f0;
+}
+
+    .nav-button {
+      background: black;
+      color: white !important;
+      padding: 13px 27px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .nav-button:hover {
+      background: #333;
+    }
+    
+    .hero {
+      padding: 150px 20px;
+      text-align: center;
+      background-color: #f5f5f7;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    
+    .cubes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    
+    .cube {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #003a9e;
+      transform-origin: top left;
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      animation: cube 12s ease-in forwards infinite;
+    }
+
+    
+    .cube:nth-child(1) {
+      top: 80vh;
+      left: 45vw;
+    }
+
+    .cube:nth-child(2) {
+      animation-delay: 2s;
+      top: 40vh;
+      left: 25vw;
+    }
+
+    .cube:nth-child(3) {
+      animation-delay: 4s;
+      top: 50vh;
+      left: 75vw;
+    }
+
+    .cube:nth-child(4) {
+      animation-delay: 6s;
+      top: 10vh;
+      left: 90vw;
+    }
+
+    .cube:nth-child(5) {
+      animation-delay: 8s;
+      top: 85vh;
+      left: 10vw;
+    }
+
+    .cube:nth-child(6) {
+      animation-delay: 10s;
+      top: 10vh;
+      left: 50vw;
+    }
+
+    @keyframes cube {
+      from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+
+    .cta {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .cta:hover {
+      background: #333;
+    }
+    
+    section {
+      padding: 60px 20px;
+      background-color: #f5f5f7;
+      text-align: center;
+    }
+    section:nth-of-type(even) {
+      background-color: white;
+    }
+    
+    #download h2 {
+      margin-bottom: 20px;
+    }
+    #download hr.divider {
+      margin-top: 0;
+    }
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .info-column {
+      flex: 1;
+      min-width: 250px;
+      max-width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: left;
+      transition: box-shadow 0.3s;
+    }
+    .info-column:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .info-column h3 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .check-list li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .check-list li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .default-list {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    
+    #plugins {
+      padding-top: 60px;
+    }
+    .plugins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .plugin-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #fff;
+      transition: box-shadow 0.3s;
+      text-align: left;
+      position: relative;
+    }
+    .plugin-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .plugin-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .plugin-download {
+      display: inline-block;
+      background: black;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 10px;
+    }
+    .plugin-download:hover {
+      background: #333;
+    }
+    .plugin-download-count {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+    .plugin-popular {
+      background: #28a745;
+      color: white;
+      padding: 3px 7px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    .downloadCount {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+    .downloadCount dt {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .downloadCount dd {
+      margin: 0;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .feature-card {
+      background: white;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .feature-card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .news-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .news-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .news-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .news-card .news-content {
+      padding: 15px;
+      text-align: left;
+    }
+    
+    .kunden-profilbild {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0px;
+}
+
+.kunden-stars {
+  color: #000000;
+  margin: 10px 0;
+}
+
+.kunden-stars i {
+  margin: 0 2px;
+}
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .testimonial-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      font-style: italic;
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .testimonial-card:before {
+      content: "“";
+      font-size: 40px;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      color: #ccc;
+    }
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: right;
+    }
+    
+    .faq-item {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .faq-item h4 {
+      margin: 0 0 10px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    .faq-item h4:after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open h4:after {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    
+    .newsletter {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    .newsletter input[type="email"] {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.newsletter .disabled-message {
+  display: block;
+  color: rgb(0, 0, 0);
+  font-size: 0.9em;
+  margin-top: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+    .newsletter button {
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .newsletter button:hover {
+      background: #333;
+    }
+    
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+    
+    footer .social-media a {
+      color: white;
+    }
+    footer .social-media a:hover {
+      color: #ddd;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .contact-form textarea {
+      resize: none;
+    }
+    .contact-form button {
+      background: black;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .contact-form button:hover {
+      background: #333;
+    }
+    
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 40px 50px;
+      font-size: 14px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-column h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      border-bottom: 1px solid #555;
+      padding-bottom: 5px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+      font-size: 13px;
+    }
+    .loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.loader-wrapper.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#status {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.figure_top {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+}
+
+.dot {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.red { background-color: #D4202B; }
+.black { background-color: #000; }
+
+.top    { --mt: -30px; --ml:   0px; }
+.bottom { --mt:  30px; --ml:   0px; }
+.left   { --mt:   0px; --ml: -30px; }
+.right  { --mt:   0px; --ml:  30px; }
+
+.top, .bottom, .left, .right {
+  margin-top: var(--mt);
+  margin-left: var(--ml);
+}
+
+.animate-normal {
+  animation: moveNormal 3.5s linear infinite;
+}
+
+.animate-flip {
+  animation: moveWithFlip 3.7s linear infinite;
+}
+
+@keyframes moveNormal {
+  0%   { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(0deg); }
+  29%  { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
+  30%  { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
+  60%  { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
+  100% { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
+}
+
+@keyframes moveWithFlip {
+  0%   { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(0deg); opacity: 1; }
+  29%  { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
+  30%  { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
+  40%  { margin-top: var(--mt); margin-left: var(--ml); opacity: 1; transform: rotateY(90deg); }
+  60%  { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
+  100% { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
+}
+  </style>
+</head>
+<body>
+  <div class="loader-wrapper" id="loader">
+    <div id="status">
+      <figure class="figure_top">
+        <div class="dot red top"></div>
+        <div class="dot red bottom"></div>
+        <div class="dot black left"></div>
+        <div class="dot black right"></div>
+      </figure>
+    </div>
+  </div>
+  <header>
+    <a href="#home" class="logo" oncontextmenu="return false;">
+      <img src="https://loopnetmedia.com/images/logo.png" alt="Logo" draggable="false">
+    </a>
+    <nav>
+      <a href="#home" data-key="navHome">Home</a>
+      <a href="#plugins" data-key="navPlugins">Plugins</a>
+      <a href="#features" data-key="navFeatures">Features</a>
+      <a href="#testimonials" data-key="navTestimonials">Kundenbewertungen</a>
+      <a href="#faq" data-key="navFaq">FAQ</a>
+      <a href="#Links" data-key="navLinks">Links</a>
+    </nav>
+    <div class="header-right">
+
+
+<div class="language-switcher">
+  <div class="selected-language">
+    <img
+      id="flag-img"
+      class="flag"
+      src="https://loopnetmedia.com/images/flag_de.png"
+      alt="Deutsch"
+    />
+    <div class="language-label">
+      <div class="label-row">
+        <span id="lang-text">Deutsch</span>
+        <i class="fas fa-chevron-down arrow-icon"></i>
+      </div>
+      <div class="underline"></div>
+    </div>
+  </div>
+
+  <div class="language-dropdown" id="dropdown">
+    <div class="language-option" data-lang="de">
+      <img
+        class="flag"
+        src="https://loopnetmedia.com/images/flag_de.png"
+        alt="Deutsch"
+      />
+      Deutsch
+    </div>
+    <div class="language-option" data-lang="en">
+      <img
+        class="flag"
+        src="https://loopnetmedia.com/images/flag_gb.png"
+        alt="English"
+      />
+      English
+    </div>
+  </div>
+</div>     
+
+<a href="https://loopnetmedia.com/request" class="nav-button" data-key="navButton" target="_blank">Jetzt loslegen</a>
+    </div>
+  </header>
+
+  
+  <section id="home" class="hero">
+    
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+   </div>
+    
+    <div class="hero-content">
+      <h1 data-key="heroTitle">Willkommen bei LoopnetMedia</h1>
+      <p data-key="heroSubtitle">Starte dein Minecraft-Abenteuer mit nur einem Klick!</p>
+      <button class="cta" id="getStarted" data-key="getStarted">Los geht's</button>
+    </div>
+  </section>
+
+    
+    <section id="download">
+ 
+      <h2 data-key="downloadSectionTitle">Was du über uns wissen musst</h2>
+      <div class="info-container">
+        <div class="info-column">
+          <h3 data-key="infoWhoTitle">Wer wir sind:</h3>
+          <p data-key="infoWhoText">
+            LoopnetMedia ist ein Unternehmen, das im Hintergrund verschiedener Serverangebote für Creator agiert. Wir sorgen für stabile, sichere und professionelle Server – immer mit Fokus auf höchste Qualität.
+          </p>
+        </div>
+        <div class="info-column">
+          <h3 data-key="infoWhyTitle">Warum LoopnetMedia?</h3>
+          <ul class="check-list">
+            <li data-key="infoWhyItem1">Professionelles Team mit Erfahrung</li>
+            <li data-key="infoWhyItem2">Technischer Support rund um die Uhr</li>
+            <li data-key="infoWhyItem3">Optimierung für beste Performance</li>
+            <li data-key="infoWhyItem4">Absolute Diskretion und Zuverlässigkeit</li>
+          </ul>
+        </div>
+        <div class="info-column">
+          <h3 data-key="infoWhatTitle">Was wir tun:</h3>
+          <ul class="default-list">
+            <li data-key="infoWhatItem1">Betreuung und Verwaltung von Minecraft-Servern</li>
+            <li data-key="infoWhatItem2">Technische Wartung und Optimierung</li>
+            <li data-key="infoWhatItem3">Sicherheits- und Performance-Checks</li>
+            <li data-key="infoWhatItem4">Individuelle Lösungen für Serverbetreiber</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  
+  <section id="plugins">
+    <h2 data-key="pluginsSectionTitle">Unsere Plugins</h2>
+    <p data-key="pluginsDescription">
+      Erweitere deinen Server mit unseren exklusiven Plugins.
+    </p>
+    <dl class="downloadCount">
+      <dt title="Anzahl der eindeutigen Downloader">Gesamtanzahl der Downloads:</dt>
+      <dd id="downloads-overall">Laden...</dd>
+    </dl>
+    <div class="plugins-grid">
+      
+      <div class="plugin-card">
+        <h3>
+          <span class="plugin-name" data-key="plugin1Name">AdvancedAura</span>
+          <span id="popularity-advancedAura"></span>
+        </h3>
+        <p>Plugin to create a protective aura around you!</p>
+        <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
+        <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
+        <p class="plugin-download-count">Downloads: <span id="downloads-advancedAura">Laden...</span></p>
+        <a href="https://example.com/advancedaura-download" class="plugin-download">Herunterladen</a>
+      </div>
+      
+      <div class="plugin-card">
+        <h3>
+          <span class="plugin-name" data-key="plugin2Name">AdvancedHead</span>
+          <span id="popularity-worldControl"></span>
+        </h3>
+        <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
+        <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
+        <p class="plugin-download-count">Downloads: <span id="downloads-worldControl">Laden...</span></p>
+        <a href="https://example.com/advancedaura-download" class="plugin-download">Herunterladen</a>
+      </div>
+      
+      <div class="plugin-card">
+        <h3>
+          <span class="plugin-name" data-key="plugin3Name">UltraAntiCheat</span>
+          <span id="popularity-ecoManager"></span>
+        </h3>
+        <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
+        <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
+        <p class="plugin-download-count">Downloads: <span id="downloads-ecoManager">Laden...</span></p>
+        <a href="https://example.com/advancedaura-download" class="plugin-download">Herunterladen</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="features">
+    <h2 data-key="featuresSectionTitle">Unsere Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4 data-key="feature1Title">Sicherheit</h4>
+        <p data-key="feature1Text">Hochleistungs-DDoS-Schutz und regelmäßige Backups.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-tachometer-alt"></i>
+        <h4 data-key="feature2Title">Performance</h4>
+        <p data-key="feature2Text">Optimierte Serverleistung für ein reibungsloses Spielerlebnis.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-headset"></i>
+        <h4 data-key="feature3Title">Support</h4>
+        <p data-key="feature3Text">24/7 technischer Support – wir sind immer für dich da.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-cogs"></i>
+        <h4 data-key="feature4Title">Management</h4>
+        <p data-key="feature4Text">Intuitive Verwaltungsoberfläche und individuelle Einstellungen.</p>
+      </div>
+    </div>
+  </section>
+
+
+<section id="testimonials">
+  <h2 data-key="testimonialsSectionTitle">Unsere Kunden</h2>
+  <div class="testimonials-grid">
+    
+    <div class="testimonial-card">
+      <img src="https://i.postimg.cc/Yq0KssG4/Design-ohne-Titel-28.png" alt="Kundenprofilbild" class="kunden-profilbild">
+      <h3><a href="https://www.youtube.com/@modue-gaming" target="_blank">Modue</a></h3>
+      <div class="kunden-stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p data-key="kundenInfo1">"Schnelle Antworten und auf dem Server kam genau das drauf was gebraucht wurde. Bei Problemen wurde sich darum gekümmert und diese kam auch zügig."</p>
+    </div>
+    
+    <div class="testimonial-card">
+      <img src="https://i.postimg.cc/Yq0KssG4/Design-ohne-Titel-28.png" alt="Kundenprofilbild" class="kunden-profilbild">
+      <h3><a href="#" target="_blank">Anna Beispiel</a></h3>
+      <div class="kunden-stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p data-key="testimonial2Text">
+        Die Betreuung und der technische Support sind einfach spitze – absolute Empfehlung!
+      </p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://i.postimg.cc/Yq0KssG4/Design-ohne-Titel-28.png" alt="Kundenprofilbild" class="kunden-profilbild">
+      <h3><a href="#" target="_blank">Jonas Test</a></h3>
+      <div class="kunden-stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p data-key="testimonial3Text">
+        Seitdem ich LoopnetMedia nutze, hat sich die Performance meines Servers deutlich verbessert.
+      </p>
+    </div>
+  </div>
+</section>
+
+  
+  <section id="faq">
+    <h2 data-key="faqSectionTitle">FAQ</h2>
+    <div class="faq-item">
+      <h4 data-key="faq1Question" onclick="this.parentElement.classList.toggle('open')">Wie kann ich mich für eine Servereinrichtung bewerben?</h4>
+      <div class="faq-answer">
+        <p data-key="faq1Answer">
+          Du kannst dich über die obere Schaltfläche in der Navigation für eine Servereinrichtung bewerben.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h4 data-key="faq2Question" onclick="this.parentElement.classList.toggle('open')">Wie viele Follower oder Abonnenten brauche ich?</h4>
+      <div class="faq-answer">
+        <p data-key="faq2Answer">
+          Für eine Bewerbung benötigen wir mindestens 100 aktive Follower oder Abonnenten auf einer etablierten Plattform.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <h4 data-key="faq3Question" onclick="this.parentElement.classList.toggle('open')">Wie erreiche ich den Support?</h4>
+      <div class="faq-answer">
+        <p data-key="faq3Answer">
+          Unser Support ist per Discord erreichbar. Die durchschnittliche Antwortzeit beträgt etwa 12 Stunden.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="newsletter">
+    <h2 data-key="newsletterSectionTitle">Newsletter</h2>
+    <div class="newsletter">
+      <p data-key="newsletterText">Bleibe immer auf dem Laufenden – abonniere unseren Newsletter!</p>
+      <input type="email" placeholder="Deine E-Mail-Adresse" data-key-placeholder="newsletterPlaceholder" disabled>
+      <button data-key="newsletterButton" disabled>Abonnieren</button>
+    </div>
+    <div class="social-media">
+      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/Loopnetmedia" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/loopnetmediade" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@loopnetmedia" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  
+  <section id="Links">
+    <h2 data-key="contactSectionTitle">Kontakt</h2>
+    <p data-key="contactText">Hast du Fragen oder Anregungen? Schreib uns!</p>
+    <div class="contact-form">
+      <form action="mailto:support@craftportal.de" method="post" enctype="text/plain">
+        <label for="name" data-key="contactName">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email" data-key="contactEmail">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message" data-key="contactMessage">Nachricht:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit" data-key="contactButton">Absenden</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3 data-key="footerColumn1Title">Über uns</h3>
+        <p data-key="footerColumn1Text">
+          LoopnetMedia ist ein Unternehmen, das im Hintergrund verschiedener Serverangebote für Creator agiert. Wir sorgen für stabile, sichere und professionelle Server – immer mit Fokus auf höchste Qualität.
+        </p>
+      </div>
+      <div class="footer-column">
+        <h3 data-key="footerColumn2Title">Links</h3>
+        <ul>
+          <li><a href="https://loopnetmedia.com/impressum">Impressum</a></li>
+          <li><a href="https://loopnetmedia.com/datenschutz">Datenschutz</a></li>              
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3 data-key="footerColumn3Title">Folge uns</h3>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/Loopnetmedia"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/loopnetmediade"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@loopnetmedia"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-key="footerBottomText">&copy; 2025 LoopnetMedia - Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+  function animateDots() {
+    const redDots = document.querySelectorAll('.dot.red');
+    const blackDots = document.querySelectorAll('.dot.black');
+
+    redDots.forEach(dot => {
+      dot.classList.remove('animate-normal');
+      void dot.offsetWidth;
+      dot.classList.add('animate-normal');
+    });
+
+    blackDots.forEach(dot => {
+      dot.classList.remove('animate-flip');
+      void dot.offsetWidth;
+      dot.classList.add('animate-flip');
+    });
+  }
+
+  function loopAnimation() {
+    animateDots();
+    setTimeout(loopAnimation, 2500);
+  }
+
+  loopAnimation();
+
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    const loadTime = Math.floor(Math.random() * 2000) + 2000;
+
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 700);
+    }, loadTime);
+  });
+
+const switcher   = document.querySelector('.language-switcher');
+const dropdown   = document.getElementById('dropdown');
+const labelRow   = switcher.querySelector('.label-row');
+const langText   = document.getElementById('lang-text');
+const flagImg    = document.getElementById('flag-img');
+
+labelRow.addEventListener('click', e => {
+  e.stopPropagation();
+  dropdown.classList.toggle('show');
+  switcher.classList.toggle('open');
+});
+
+document.querySelectorAll('.language-option').forEach(option => {
+  option.addEventListener('click', e => {
+    e.stopPropagation();
+    const lang = option.dataset.lang;
+    if (lang === 'de') {
+      langText.textContent = 'Deutsch';
+      flagImg.src = 'https://loopnetmedia.com/images/flag_de.png';
+      flagImg.alt = 'Deutsch';
+    } else {
+      langText.textContent = 'English';
+      flagImg.src = 'https://loopnetmedia.com/images/flag_gb.png';
+      flagImg.alt = 'English';
+    }
+    changeLanguage(lang);
+    dropdown.classList.remove('show');
+    switcher.classList.remove('open');
+  });
+});
+
+
+document.addEventListener('click', () => {
+  dropdown.classList.remove('show');
+  switcher.classList.remove('open');
+});
+
+   
+    let currentLanguage = "de";
+
+   
+    const translations = {
+      de: {
+       
+        navHome: "Home",
+        navFertigserver: "Fertigserver",
+        navPlugins: "Plugins",
+        navFeatures: "Features",
+        navNews: "Neuigkeiten",
+        navTestimonials: "Unsere Kunden",
+        navFaq: "FAQ",
+        navLinks: "Links",
+        navButton: "Jetzt loslegen",
+       
+        heroTitle: "Willkommen bei LoopnetMedia",
+        heroSubtitle: "Du erstellst Inhalte und willst einen Minecraft-Server? Wir machen es möglich!",
+        getStarted: "Los geht's",
+       
+        downloadSectionTitle: "Was du über uns wissen musst",
+        infoWhoTitle: "Wer wir sind:",
+        infoWhoText: "LoopnetMedia ist ein Unternehmen, das im Hintergrund verschiedener Serverangebote für Creator agiert. Wir sorgen für stabile, sichere und professionelle Server – immer mit Fokus auf höchste Qualität.",
+        infoWhyTitle: "Warum LoopetMedia?",
+        infoWhyItem1: "Professionelles Team mit Erfahrung",
+        infoWhyItem2: "Technischer Support rund um die Uhr",
+        infoWhyItem3: "Optimierung für beste Performance",
+        infoWhyItem4: "Absolute Diskretion und Zuverlässigkeit",
+        infoWhatTitle: "Was wir tun:",
+        infoWhatItem1: "Betreuung und Verwaltung von Minecraft-Servern",
+        infoWhatItem2: "Technische Wartung und Optimierung",
+        infoWhatItem3: "Sicherheits- und Performance-Checks",
+        infoWhatItem4: "Individuelle Lösungen für Serverbetreiber",
+       
+        pluginsSectionTitle: "Unsere Plugins",
+        pluginsDescription: "Erweitere deinen Server mit unseren exklusiven Plugins.",
+        plugin1Name: "AdvancedAura",
+        plugin2Name: "AdvancedHead",
+        plugin3Name: "UltraAntiCheat",
+        pluginPopular: "Beliebt",
+       
+        featuresSectionTitle: "Unsere Features",
+        feature1Title: "Sicherheit",
+        feature1Text: "Hochleistungs-DDoS-Schutz und regelmäßige Backups.",
+        feature2Title: "Performance",
+        feature2Text: "Optimierte Serverleistung für ein reibungsloses Spielerlebnis.",
+        feature3Title: "Support",
+        feature3Text: "24/7 technischer Support – wir sind immer für dich da.",
+        feature4Title: "Management",
+        feature4Text: "Intuitive Verwaltungsoberfläche und individuelle Einstellungen.",
+       
+        newsSectionTitle: "Neuigkeiten",
+        news1Title: "AdvancedAura-Update v1.6.0-SNAPSHOT",
+        news1Text: "Neue Features und verbesserte Performance in unserem neuesten Update.",
+        news2Title: "Support erweitert",
+        news2Text: "Unser technischer Support ist jetzt rund um die Uhr erreichbar.",
+        news3Title: "Neue Plugins",
+        news3Text: "Unser Plugin-Angebot wurde erweitert – entdecke die Neuheiten!",
+       
+        testimonialsSectionTitle: "Unsere Kunden",
+        testimonial1Text: "Dank LoopnetMedia läuft mein Server stabil und ich kann mich voll auf meine Community konzentrieren.",
+        testimonial1Author: "- Max Mustermann",
+        testimonial2Text: "Die Betreuung und der technische Support sind einfach spitze – absolute Empfehlung!",
+        testimonial2Author: "- Anna Beispiel",
+        testimonial3Text: "Seitdem ich LoopnetMedia nutze, hat sich die Performance meines Servers deutlich verbessert.",
+        testimonial3Author: "- Jonas Test",
+       
+        faqSectionTitle: "FAQ",
+        faq1Question: "Wie kann ich mich für eine Servereinrichtung bewerben?",
+        faq1Answer: "Du kannst dich über diesen Link für eine Servereinrichtung bewerben. https://loopnetmedia.com/request",
+        faq2Question: "Wie viele Abonnenten oder Follower benötige ich?",
+        faq2Answer: "Du benötigst mindestens 100 aktive Follower oder Abonnenten auf einer etablierten Plattform.",
+        faq3Question: "Wie erreiche ich den Support?",
+        faq3Answer: "Unser Support ist per Discord erreichbar. Die durchschnittliche Antwortzeit beträgt etwa 12 Stunden.",
+       
+        newsletterSectionTitle: "Newsletter",
+        newsletterText: "Bleibe immer auf dem Laufenden – abonniere unseren Newsletter!",
+        newsletterPlaceholder: "Deine E-Mail-Adresse",
+        newsletterButton: "Abonnieren",
+       
+        contactSectionTitle: "Kontakt",
+        contactText: "Hast du Fragen oder Anregungen? Schreib uns!",
+        contactName: "Name:",
+        contactEmail: "E-Mail:",
+        contactMessage: "Nachricht:",
+        contactButton: "Absenden",
+       
+        footerColumn1Title: "Über uns",
+        footerColumn1Text: "LoopnetMedia ist ein Unternehmen, das im Hintergrund verschiedener Serverangebote für Creator agiert. Wir sorgen für stabile, sichere und professionelle Server – immer mit Fokus auf höchste Qualität.",
+        footerColumn2Title: "Links",
+        footerColumn3Title: "Folge uns",
+        footerBottomText: "© LoopnetMedia - Alle Rechte vorbehalten."
+      },
+      en: {
+   
+    navHome: "Home",
+    navFertigserver: "Prebuilt Server",
+    navPlugins: "Plugins",
+    navFeatures: "Features",
+    navNews: "News",
+    navTestimonials: "Customer ratings",
+    navFaq: "FAQ",
+    navLinks: "Links",
+    navButton: "Get started",
+   
+    heroTitle: "Welcome to LoopnetMedia",
+    heroSubtitle: "You're a content creator and want a Minecraft server? We make it possible!",
+    getStarted: "Let's Go",
+   
+    downloadSectionTitle: "What You Should Know About Us",
+    infoWhoTitle: "Who We Are:",
+    infoWhoText: "LoopnetMedia is a company operating behind various server solutions for creators. We provide stable, secure, and professional servers – always focused on top quality.",
+    infoWhyTitle: "Why LoopnetMedia?",
+    infoWhyItem1: "Professional team with experience",
+    infoWhyItem2: "24/7 technical support",
+    infoWhyItem3: "Optimized for best performance",
+    infoWhyItem4: "Complete discretion and reliability",
+    infoWhatTitle: "What We Do:",
+    infoWhatItem1: "Management and administration of Minecraft servers",
+    infoWhatItem2: "Technical maintenance and optimization",
+    infoWhatItem3: "Security and performance checks",
+    infoWhatItem4: "Custom solutions for server operators",
+   
+    pluginsSectionTitle: "Our Plugins",
+    pluginsDescription: "Enhance your server with our exclusive plugins.",
+    plugin1Name: "AdvancedAura",
+    plugin2Name: "AdvancedHead",
+    plugin3Name: "UltraAntiCheat",
+    pluginPopular: "Popular",
+   
+    featuresSectionTitle: "Our Features",
+    feature1Title: "Security",
+    feature1Text: "High-performance DDoS protection and regular backups.",
+    feature2Title: "Performance",
+    feature2Text: "Optimized server performance for smooth gameplay.",
+    feature3Title: "Support",
+    feature3Text: "24/7 technical support – we're always here for you.",
+    feature4Title: "Management",
+    feature4Text: "Intuitive management interface and custom settings.",
+   
+    newsSectionTitle: "News",
+    news1Title: "AdvancedAura Update v1.6.0-SNAPSHOT",
+    news1Text: "New features and improved performance in our latest update.",
+    news2Title: "Support Expanded",
+    news2Text: "Our technical support is now available 24/7.",
+    news3Title: "New Plugins",
+    news3Text: "Our plugin offering has grown – discover the new additions!",
+   
+    testimonialsSectionTitle: "Our Clients",
+    testimonial1Text: "Thanks to LoopnetMedia, my server runs smoothly and I can fully focus on my community.",
+    testimonial1Author: "- Max Mustermann",
+    testimonial2Text: "The service and technical support are top-notch – highly recommended!",
+    testimonial2Author: "- Anna Beispiel",
+    testimonial3Text: "Since I started using LoopnetMedia, my server's performance has significantly improved.",
+    testimonial3Author: "- Jonas Test",
+   
+    faqSectionTitle: "FAQ",
+    faq1Question: "How do I sign up for the server?",
+    faq1Answer: "Registration is done through the setup wizard – just follow the instructions.",
+    faq2Question: "Which versions are supported?",
+    faq2Answer: "Our prebuilt server supports versions from 0.9.0 to 1.1.0 – more updates are planned.",
+    faq3Question: "How can I contact support?",
+    faq3Answer: "Our support is available 24/7 via email or phone – all contact info is in the links section.",
+   
+    newsletterSectionTitle: "Newsletter",
+    newsletterText: "Stay up to date – subscribe to our newsletter!",
+    newsletterPlaceholder: "Your email address",
+    newsletterButton: "Subscribe",
+   
+    contactSectionTitle: "Contact",
+    contactText: "Got questions or feedback? Get in touch!",
+    contactName: "Name:",
+    contactEmail: "Email:",
+    contactMessage: "Message:",
+    contactButton: "Send",
+   
+    footerColumn1Title: "About Us",
+    footerColumn1Text: "LoopnetMedia is a company operating behind various server solutions for creators. We provide stable, secure, and professional servers – always focused on top quality.",
+    footerColumn2Title: "Links",
+    footerColumn3Title: "Follow Us",
+    footerBottomText: "© LoopnetMedia - All rights reserved."
+  }
+    };
+
+    function updateTextElements() {
+      document.querySelectorAll("[data-key]").forEach(elem => {
+        const key = elem.getAttribute("data-key");
+        if (translations[currentLanguage][key]) {
+          elem.textContent = translations[currentLanguage][key];
+        }
+      });
+      document.querySelectorAll("[data-key-placeholder]").forEach(elem => {
+        const key = elem.getAttribute("data-key-placeholder");
+        if (translations[currentLanguage][key]) {
+          elem.placeholder = translations[currentLanguage][key];
+        }
+      });
+      document.querySelectorAll("[id^='popularity-']").forEach(elem => {
+        if(elem.textContent.trim() !== "") {
+          elem.textContent = translations[currentLanguage].pluginPopular;
+        }
+      });
+    }
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      document.documentElement.lang = lang;
+      updateTextElements();
+    }
+
+    function smoothScroll(target, duration) {
+      const targetElement = document.querySelector(target);
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+    
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+    
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+    
+      requestAnimationFrame(animation);
+    }
+    
+   
+    document.getElementById('getStarted').addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScroll('#download', 1000);
+    });
+    
+    document.getElementById('nav-start').addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScroll('#download', 1000);
+    });
+
+    async function fetchDownloads() {
+      const resources = {
+        advancedAura: 116716,
+        worldControl: 118405,
+        ecoManager: 119629
+      };
+      
+      let totalDownloads = 0;
+      const popularityThreshold = 250;
+      
+      for (const [plugin, id] of Object.entries(resources)) {
+        try {
+          const response = await fetch(`https://api.spiget.org/v2/resources/${id}`);
+          if (!response.ok) {
+            throw new Error(`Fehler beim Abrufen von Resource ${id}`);
+          }
+          const data = await response.json();
+          totalDownloads += data.downloads;
+          
+          document.getElementById(`downloads-${plugin}`).textContent = data.downloads;
+          
+          const popularityElem = document.getElementById(`popularity-${plugin}`);
+          if (data.downloads >= popularityThreshold) {
+            popularityElem.classList.add("plugin-popular");
+            popularityElem.textContent = translations[currentLanguage].pluginPopular;
+          } else {
+            popularityElem.classList.remove("plugin-popular");
+            popularityElem.textContent = '';
+          }
+        } catch (error) {
+          document.getElementById(`downloads-${plugin}`).textContent = 'Fehler';
+          console.error('Fehler:', error);
+        }
+      }
+      
+      document.getElementById('downloads-overall').textContent = totalDownloads;
+    }
+    
+   
+    updateTextElements();
+    fetchDownloads();
+  </script>
+</body>
+</html>
