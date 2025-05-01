@@ -473,7 +473,6 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
     .downloadCount dd {
       margin: 0;
     }
-    
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -735,96 +734,9 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
       padding-top: 10px;
       font-size: 13px;
     }
-    .loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  z-index: 9999;
-  transition: opacity 0.6s ease;
-}
-
-.loader-wrapper.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-#status {
-  width: 150px;
-  height: 150px;
-  position: relative;
-}
-
-.figure_top {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 70px;
-  height: 70px;
-}
-
-.dot {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
-.red { background-color: #D4202B; }
-.black { background-color: #000; }
-
-.top    { --mt: -30px; --ml:   0px; }
-.bottom { --mt:  30px; --ml:   0px; }
-.left   { --mt:   0px; --ml: -30px; }
-.right  { --mt:   0px; --ml:  30px; }
-
-.top, .bottom, .left, .right {
-  margin-top: var(--mt);
-  margin-left: var(--ml);
-}
-
-.animate-normal {
-  animation: moveNormal 3.5s linear infinite;
-}
-
-.animate-flip {
-  animation: moveWithFlip 3.7s linear infinite;
-}
-
-@keyframes moveNormal {
-  0%   { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(0deg); }
-  29%  { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
-  30%  { margin: 0 0; opacity: 0.2; transform: rotateY(0deg); }
-  60%  { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
-  100% { margin: var(--mt) var(--ml); opacity: 1; transform: rotateY(180deg); }
-}
-
-@keyframes moveWithFlip {
-  0%   { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(0deg); opacity: 1; }
-  29%  { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
-  30%  { margin-top: 0; margin-left: 0; transform: rotateY(0deg); opacity: 0.2; }
-  40%  { margin-top: var(--mt); margin-left: var(--ml); opacity: 1; transform: rotateY(90deg); }
-  60%  { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
-  100% { margin-top: var(--mt); margin-left: var(--ml); transform: rotateY(180deg); opacity: 1; }
-}
   </style>
 </head>
 <body>
-  <div class="loader-wrapper" id="loader">
-    <div id="status">
-      <figure class="figure_top">
-        <div class="dot red top"></div>
-        <div class="dot red bottom"></div>
-        <div class="dot black left"></div>
-        <div class="dot black right"></div>
-      </figure>
-    </div>
-  </div>
   <header>
     <a href="#home" class="logo" oncontextmenu="return false;">
       <img src="https://loopnetmedia.com/images/logo.png" alt="Logo" draggable="false">
@@ -936,47 +848,46 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
       Erweitere deinen Server mit unseren exklusiven Plugins.
     </p>
     <dl class="downloadCount">
-      <dt title="Anzahl der eindeutigen Downloader">Gesamtanzahl der Downloads:</dt>
-      <dd id="downloads-overall">Laden...</dd>
+      <dt title="Anzahl der eindeutigen Downloader" data-key="downloadsOverallLabel">Gesamtanzahl der Downloads:</dt>
+<dd id="downloads-overall" class="centered">Laden...</dd>
     </dl>
     <div class="plugins-grid">
       
       <div class="plugin-card">
         <h3>
           <span class="plugin-name" data-key="plugin1Name">AdvancedAura</span>
-          <span id="popularity-advancedAura"></span>
+          <span id="popularity-AdvancedAura"></span>
         </h3>
         <p>Plugin to create a protective aura around you!</p>
         <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
         <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
-        <p class="plugin-download-count">Downloads: <span id="downloads-advancedAura">Laden...</span></p>
+        <p>Downloads: <span id="downloads-AdvancedAura">Laden...</span></p>
         <a href="https://www.spigotmc.org/resources/advancedaura-plugin-to-create-a-protective-aura-around-you-aura-plugin.116716/" class="plugin-download">Herunterladen</a>
       </div>
       
       <div class="plugin-card">
         <h3>
           <span class="plugin-name" data-key="plugin2Name">AdvancedHead</span>
-          <span id="popularity-worldControl"></span>
+          <span id="popularity-AdvancedHead"></span>
         </h3>
         <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
         <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
-        <p class="plugin-download-count">Downloads: <span id="downloads-worldControl">Laden...</span></p>
+        <p>Downloads: <span id="downloads-AdvancedHead">Laden...</span></p>
         <a href="https://www.spigotmc.org/resources/advancedhead-%C3%97-v1-0-1-8-1-21-x-%E2%9A%A1.118405/" class="plugin-download">Herunterladen</a>
       </div>
       
       <div class="plugin-card">
         <h3>
           <span class="plugin-name" data-key="plugin3Name">UltraAntiCheat</span>
-          <span id="popularity-ecoManager"></span>
+          <span id="popularity-UltraAntiCheat"></span>
         </h3>
         <p>Plugin-Version: <span style="color: rgb(114, 113, 113);">v1.6.0-SNAPSHOT</span></p>
         <p>Version: <span style="color: rgb(114, 113, 113);">1.16+</span></p>
-        <p class="plugin-download-count">Downloads: <span id="downloads-ecoManager">Laden...</span></p>
+        <p>Downloads: <span id="downloads-UltraAntiCheat">Laden...</span></p>
         <a href="https://www.spigotmc.org/resources/ultraanticheat.119629/" class="plugin-download">Herunterladen</a>
       </div>
     </div>
   </section>
-
   
   <section id="features">
     <h2 data-key="featuresSectionTitle">Unsere Features</h2>
@@ -1081,7 +992,6 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
       </div>
     </div>
   </section>
-
   
   <section id="newsletter">
     <h2 data-key="newsletterSectionTitle">Newsletter</h2>
@@ -1097,27 +1007,6 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
       <a href="https://youtube.com/@loopnetmedia" title="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
   </section>
-
-  
-  <section id="Links">
-    <h2 data-key="contactSectionTitle">Kontakt</h2>
-    <p data-key="contactText">Hast du Fragen oder Anregungen? Schreib uns!</p>
-    <div class="contact-form">
-      <form action="mailto:support@craftportal.de" method="post" enctype="text/plain">
-        <label for="name" data-key="contactName">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email" data-key="contactEmail">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message" data-key="contactMessage">Nachricht:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit" data-key="contactButton">Absenden</button>
-      </form>
-    </div>
-  </section>
-
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -1149,44 +1038,47 @@ a:not(.footer-container a):not(:has(img)):not(.plugin-download):not(nav a):not(.
   </footer>
 
   <script>
-  function animateDots() {
-    const redDots = document.querySelectorAll('.dot.red');
-    const blackDots = document.querySelectorAll('.dot.black');
+  const plugins = [
+    { id: 116716, name: 'AdvancedAura' },
+    { id: 118405, name: 'AdvancedHead' },
+    { id: 119629, name: 'UltraAntiCheat' }
+  ];
 
-    redDots.forEach(dot => {
-      dot.classList.remove('animate-normal');
-      void dot.offsetWidth;
-      dot.classList.add('animate-normal');
-    });
+  let totalDownloads = 0;
 
-    blackDots.forEach(dot => {
-      dot.classList.remove('animate-flip');
-      void dot.offsetWidth;
-      dot.classList.add('animate-flip');
-    });
+  plugins.forEach(plugin => {
+    const apiUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://api.spiget.org/v2/resources/${plugin.id}`)}`;
+
+    fetch(apiUrl)
+      .then(res => {
+        if (!res.ok) throw new Error('Fehler beim Laden von Plugin ' + plugin.name);
+        return res.json();
+      })
+      .then(data => {
+        const count = data.downloads;
+
+        // Setze Download-Anzeige (wenn vorhanden)
+        const downloadElement = document.getElementById(`downloads-${plugin.name}`);
+        if (downloadElement) downloadElement.textContent = count;
+
+        // Zeige "Popular"-Label, wenn 250 oder mehr Downloads
+if (count >= 250) {
+  const popularitySpan = document.getElementById(`popularity-${plugin.name}`);
+  if (popularitySpan) {
+    popularitySpan.innerHTML = `<span class="plugin-popular" data-key="pluginPopular">${translations[currentLanguage].pluginPopular}</span>`;
   }
-
-  function loopAnimation() {
-    animateDots();
-    setTimeout(loopAnimation, 2500);
-  }
-
-  loopAnimation();
-
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-
-    const loadTime = Math.floor(Math.random() * 2000) + 2000;
-
-    setTimeout(() => {
-      loader.classList.add("fade-out");
-
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 700);
-    }, loadTime);
+}
+        totalDownloads += count;
+        const overallElement = document.getElementById('downloads-overall');
+        if (overallElement) overallElement.textContent = totalDownloads;
+      })
+      .catch(err => {
+        console.error(err);
+        const fallback = document.getElementById(`downloads-${plugin.name}`);
+        if (fallback) fallback.textContent = 'Fehler';
+      });
   });
-
+  
 const switcher   = document.querySelector('.language-switcher');
 const dropdown   = document.getElementById('dropdown');
 const labelRow   = switcher.querySelector('.label-row');
@@ -1259,6 +1151,7 @@ document.addEventListener('click', () => {
         infoWhatItem3: "Sicherheits- und Performance-Checks",
         infoWhatItem4: "Individuelle Lösungen für Serverbetreiber",
        
+        downloadsOverallLabel: "Gesamtanzahl der Downloads:",
         pluginsSectionTitle: "Unsere Plugins",
         pluginsDescription: "Erweitere deinen Server mit unseren exklusiven Plugins.",
         plugin1Name: "AdvancedAura",
@@ -1348,6 +1241,7 @@ document.addEventListener('click', () => {
     infoWhatItem3: "Security and performance checks",
     infoWhatItem4: "Custom solutions for server operators",
    
+    downloadsOverallLabel: "Total downloads:",
     pluginsSectionTitle: "Our Plugins",
     pluginsDescription: "Enhance your server with our exclusive plugins.",
     plugin1Name: "AdvancedAura",
@@ -1470,48 +1364,6 @@ document.addEventListener('click', () => {
       e.preventDefault();
       smoothScroll('#download', 1000);
     });
-
-    async function fetchDownloads() {
-      const resources = {
-        advancedAura: 116716,
-        worldControl: 118405,
-        ecoManager: 119629
-      };
-      
-      let totalDownloads = 0;
-      const popularityThreshold = 250;
-      
-      for (const [plugin, id] of Object.entries(resources)) {
-        try {
-          const response = await fetch(`https://api.spiget.org/v2/resources/${id}`);
-          if (!response.ok) {
-            throw new Error(`Fehler beim Abrufen von Resource ${id}`);
-          }
-          const data = await response.json();
-          totalDownloads += data.downloads;
-          
-          document.getElementById(`downloads-${plugin}`).textContent = data.downloads;
-          
-          const popularityElem = document.getElementById(`popularity-${plugin}`);
-          if (data.downloads >= popularityThreshold) {
-            popularityElem.classList.add("plugin-popular");
-            popularityElem.textContent = translations[currentLanguage].pluginPopular;
-          } else {
-            popularityElem.classList.remove("plugin-popular");
-            popularityElem.textContent = '';
-          }
-        } catch (error) {
-          document.getElementById(`downloads-${plugin}`).textContent = 'Fehler';
-          console.error('Fehler:', error);
-        }
-      }
-      
-      document.getElementById('downloads-overall').textContent = totalDownloads;
-    }
-    
-   
-    updateTextElements();
-    fetchDownloads();
   </script>
 </body>
 </html>
