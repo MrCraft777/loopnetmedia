@@ -8,10 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --neon-green: #9AFF00;
-      --neon-green-transparent: rgba(154, 255, 0, 0.1);
-      --dark-bg: #0e0e0e;
-      --gray-gradient: radial-gradient(circle at 20% 30%, #2a2a2a 0%, #151515 60%, #0e0e0e 100%);
+      --green: #9AFF00;
+      --green-dark: #7ed800;
       --card-bg: rgba(23, 23, 23, 0.6);
     }
 
@@ -23,7 +21,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--gray-gradient);
+      background: radial-gradient(circle at 20% 30%, #2a2a2a 0%, #151515 60%, #0e0e0e 100%);
       color: #f0f0f0;
       min-height: 100vh;
       display: flex;
@@ -56,7 +54,7 @@
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       font-size: 40px;
       cursor: pointer;
     }
@@ -67,12 +65,70 @@
     }
 
     .stars i.selected {
-      color: var(--neon-green);
+      color: var(--green);
     }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+.form-group textarea {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 3px solid #666;
+  background: #1c1c1c;
+  color: #fff;
+  outline: none;
+  resize: none;
+  height: 150px;
+  border-radius: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) #0e0e0e;
+}
+
+.form-group textarea::-webkit-scrollbar {
+  width: 8px;
+}
+.form-group textarea::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+.form-group textarea::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+  border-radius: 0;
+}
+
+.form-group textarea:focus {
+  border-bottom: 3px solid var(--green);
+}
+
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  pointer-events: none;
+      background: transparent;
+  padding: 0 4px;
+}
+
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 13px;
+  color: var(--green);
+}
 
     .submit-btn {
       font-family: 'Poppins', sans-serif;
-      background: var(--neon-green);
+      background: var(--green);
       color: #0e0e0e;
       border: none;
       padding: 15px 30px;
@@ -85,8 +141,7 @@
     }
 
     .submit-btn:hover {
-      font-family: 'Poppins', sans-serif;
-      background: #b3ff4d;
+      background: var(--green-dark);
     }
 
     .download-link {
@@ -97,20 +152,27 @@
       font-size: 15px;
       font-weight: 500;
       padding: 12px 24px;
-      color: var(--neon-green);
+      color: var(--green);
       background: transparent;
-      border: 2px solid var(--neon-green);
+      border: 2px solid var(--green);
       border-radius: 8px;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .download-link:hover {
-      background: var(--neon-green-transparent);
+      background: rgba(154, 255, 0, 0.1);
     }
 
     .download-link i {
       font-size: 16px;
+    }
+
+    .error-msg {
+      color: var(--green);
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
     }
   </style>
 </head>
@@ -118,7 +180,7 @@
   <div class="rating-box">
     <h1>Rate the Plugin</h1>
     <p>How many stars would you give this plugin?</p>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSc8uQf5tCsXlg97JANnhVrlaBOh9iwS6hAHwLHW1oGhrx0i-Q/formResponse" method="POST" target="_blank">
+    <form onsubmit="return validateForm()" action="https://docs.google.com/forms/d/e/1FAIpQLSc8uQf5tCsXlg97JANnhVrlaBOh9iwS6hAHwLHW1oGhrx0i-Q/formResponse" method="POST" target="_blank">
       <div class="stars" id="stars">
         <i class="fa fa-star" data-value="1"></i>
         <i class="fa fa-star" data-value="2"></i>
@@ -126,9 +188,18 @@
         <i class="fa fa-star" data-value="4"></i>
         <i class="fa fa-star" data-value="5"></i>
       </div>
-      <input type="hidden" name="entry.1421084970" id="ratingInput" required>
+      <div class="error-msg" id="starError">Please select a star rating.</div>
+      <input type="hidden" name="entry.1421084970" id="ratingInput" />
+
+      <div class="form-group">
+        <textarea id="message" name="entry.1276491731" placeholder=" "></textarea>
+        <label for="message">Your message</label>
+        <div class="error-msg" id="messageError">Please fill out the message field.</div>
+      </div>
+
       <button type="submit" class="submit-btn">Submit</button>
     </form>
+
     <a href="https://drive.google.com/uc?export=download&id=1y4lPdGkpU9xY4EELi-FsKRSquCDEwXWq" class="download-link" target="_blank">
       <i class="fa fa-download"></i> Download
     </a>
@@ -147,8 +218,30 @@
         for (let i = 0; i < rating; i++) {
           stars[i].classList.add('selected');
         }
+
+        document.getElementById('starError').style.display = 'none';
       });
     });
+
+    function validateForm() {
+      const message = document.getElementById('message').value.trim();
+      const rating = ratingInput.value;
+      let valid = true;
+
+      if (!rating) {
+        document.getElementById('starError').style.display = 'block';
+        valid = false;
+      }
+
+      if (!message) {
+        document.getElementById('messageError').style.display = 'block';
+        valid = false;
+      } else {
+        document.getElementById('messageError').style.display = 'none';
+      }
+
+      return valid;
+    }
   </script>
 </body>
 </html>
