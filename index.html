@@ -1049,6 +1049,10 @@
   <img class="flag" src="https://loopnetmedia.com/images/flag_tr.png" alt="Türkçe">
   Türkçe
 </div>
+          <div class="language-option" data-lang="pl">
+  <img class="flag" src="https://loopnetmedia.com/images/flag_pl.png" alt="Polski">
+  Polski
+</div>
         </div>
       </div>     
 
@@ -1336,7 +1340,7 @@
     
     // Language Detection and Switching
     const browserLanguage = navigator.language || navigator.userLanguage;
-const supportedLanguages = ['de', 'en', 'es', 'fr', 'it', 'nl', 'ru', 'sv', 'no', 'fi', 'pt', 'tr'];
+const supportedLanguages = ['de', 'en', 'es', 'fr', 'it', 'nl', 'ru', 'sv', 'no', 'fi', 'pt', 'tr', 'pl'];
     let currentLanguage = 'de'; // Default language
     
     // Check if browser language is supported
@@ -1358,7 +1362,8 @@ const languageFlags = {
   no: 'https://loopnetmedia.com/images/flag_no.png',
   fi: 'https://loopnetmedia.com/images/flag_fi.png',
   pt: 'https://loopnetmedia.com/images/flag_pt.png',
-  tr: 'https://loopnetmedia.com/images/flag_tr.png'
+  tr: 'https://loopnetmedia.com/images/flag_tr.png',
+  pl: 'https://loopnetmedia.com/images/flag_pl.png'
 };
 
 const languageNames = {
@@ -1373,7 +1378,8 @@ const languageNames = {
   no: 'Norsk',
   fi: 'Suomi',
   pt: 'Português',
-  tr: 'Türkçe'
+  tr: 'Türkçe',
+  pl: 'Polski'
 };
     
     // Translations
@@ -2277,6 +2283,81 @@ tr: {
   footerImpressum: "İmpressum",
   footerDatenschutz: "Gizlilik Politikası",
   footerBottomText: "© 2025 LoopnetMedia - Tüm hakları saklıdır."
+},
+      pl: {
+  navHome: "Strona główna",
+  navPlugins: "Wtyczki",
+  navFeatures: "Funkcje",
+  navTestimonials: "Opinie",
+  navFaq: "FAQ",
+  navLinks: "Linki",
+  navButton: "Rozpocznij",
+  
+  heroTitle: "Witamy w",
+  heroSubtitle: "Tworzysz treści i chcesz serwer Minecraft? Umożliwiamy to!",
+  getStarted: "Zaczynajmy",
+  
+  downloadSectionTitle: "Co musisz wiedzieć o nas",
+  downloadSectionSubtitle: "Oferujemy profesjonalne rozwiązania serwerowe dla twórców treści",
+  infoWhoTitle: "Kim jesteśmy:",
+  infoWhoText: "LoopnetMedia to firma działająca w tle różnych rozwiązań serwerowych dla twórców. Zapewniamy stabilne, bezpieczne i profesjonalne serwery - zawsze z naciskiem na najwyższą jakość.",
+  infoWhyTitle: "Dlaczego LoopnetMedia?",
+  infoWhyItem1: "Profesjonalny zespół z doświadczeniem",
+  infoWhyItem2: "Wsparcie techniczne 24/7",
+  infoWhyItem3: "Zoptymalizowane pod kątem najlepszej wydajności",
+  infoWhyItem4: "Pełna dyskrecja i niezawodność",
+  infoWhatTitle: "Co robimy:",
+  infoWhatItem1: "Zarządzanie i administracja serwerami Minecraft",
+  infoWhatItem2: "Konserwacja techniczna i optymalizacja",
+  infoWhatItem3: "Kontrole bezpieczeństwa i wydajności",
+  infoWhatItem4: "Indywidualne rozwiązania dla operatorów serwerów",
+  
+  downloadsOverallLabel: "Łączna liczba pobrań:",
+  pluginsSectionTitle: "Nasze wtyczki",
+  pluginsDescription: "Rozszerz swój serwer o nasze ekskluzywne wtyczki.",
+  plugin1Name: "AdvancedAura",
+  plugin2Name: "AdvancedHead",
+  plugin3Name: "UltraAntiCheat",
+  pluginPopular: "Popularne",
+  
+  featuresSectionTitle: "Nasze funkcje",
+  featuresDescription: "Wszystko, czego potrzebujesz do udanego serwera",
+  feature1Title: "Bezpieczeństwo",
+  feature1Text: "Wysokowydajna ochrona DDoS i regularne kopie zapasowe.",
+  feature2Title: "Wydajność",
+  feature2Text: "Zoptymalizowana wydajność serwera dla płynnego rozgrywania.",
+  feature3Title: "Wsparcie",
+  feature3Text: "Wsparcie techniczne 24/7 - zawsze jesteśmy do Twojej dyspozycji.",
+  feature4Title: "Zarządzanie",
+  feature4Text: "Intuicyjny interfejs zarządzania i indywidualne ustawienia.",
+  
+  testimonialsSectionTitle: "Nasi klienci",
+  testimonialsDescription: "Co mówią o nas nasi zadowoleni klienci",
+  kundenInfo1: "Szybkie odpowiedzi i dokładnie to, co było potrzebne, zostało umieszczone na serwerze. Problemy były szybko rozwiązywane.",
+  
+  faqSectionTitle: "Najczęściej zadawane pytania",
+  faqDescription: "Popularne pytania i odpowiedzi",
+  faq1Question: "Jak mogę ubiegać się o konfigurację serwera?",
+  faq1Answer: "Możesz ubiegać się o konfigurację serwera za pomocą przycisku w nawigacji.",
+  faq2Question: "Ilu obserwujących lub subskrybentów potrzebuję?",
+  faq2Answer: "Do aplikacji potrzebujemy co najmniej 100 aktywnych obserwujących lub subskrybentów na ustalonej platformie.",
+  faq3Question: "Jak mogę skontaktować się z pomocą techniczną?",
+  faq3Answer: "Nasze wsparcie jest dostępne przez Discord. Średni czas odpowiedzi to około 12 godzin.",
+  
+  newsletterSectionTitle: "Newsletter",
+  newsletterDescription: "Bądź na bieżąco z naszymi najnowszymi rozwojami",
+  newsletterText: "Bądź zawsze na bieżąco - zapisz się do naszego newslettera!",
+  newsletterPlaceholder: "Twój adres e-mail",
+  newsletterButton: "Zapisz się",
+  newsletterDisabled: "Newsletter jest obecnie niedostępny.",
+  
+  footerColumn1Title: "O nas",
+  footerColumn1Text: "LoopnetMedia to firma działająca w tle różnych rozwiązań serwerowych dla twórców. Zapewniamy stabilne, bezpieczne i profesjonalne serwery - zawsze z naciskiem na najwyższą jakość.",
+  footerColumn2Title: "Linki",
+  footerColumn3Title: "Śledź nas",
+  footerImpressum: "Impressum",
+  footerDatenschutz: "Polityka prywatności",
+  footerBottomText: "© 2025 LoopnetMedia - Wszelkie prawa zastrzeżone."
 }
     };
     
