@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loopnetmedia.com</title>
+</head>
+<body style="margin:0; display:flex; justify-content:center; align-items:center; height:100vh; background-color:black;">
+    <video id="introVideo" width="100%" height="100%" autoplay>
+        <source src="https://craftportal.net/lnmedia_intro.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+
+    <script>
+        const video = document.getElementById('introVideo');
+
+        video.addEventListener('ended', () => {
+            window.location.href = 'https://drive.google.com/file/d/1BHHm498y0oaUuV4anWtKR25KVAFzg1pH/view?usp=sharing';
+        });
+    </script>
+</body>
+</html>
