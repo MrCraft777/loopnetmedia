@@ -158,6 +158,34 @@
         gap: 14px;
       }
     }
+    
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+.made-in-germany {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.germany-circle {
+  width: 34px;
+  height: 34px;
+  overflow: visible;
+}
+
+.germany-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #444;
+}
   </style>
 </head>
 <body>
@@ -215,7 +243,27 @@
 Sofern Inhalte Dritter auf dieser Website verwendet werden, sind diese als solche gekennzeichnet. Sollten Sie trotz Kennzeichnung auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen Hinweis. Nach Prüfung werden verletzende Inhalte umgehend entfernt.</p>
       </div>
 
-      <footer>© 2026 Loopnetmedia Studios</footer>
+<footer class="footer">
+
+  <div class="footer-line">
+    © 2026 Loopnetmedia Studios
+  </div>
+
+  <div class="made-in-germany">
+
+    <svg class="germany-circle" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" stroke="#000" stroke-width="14" fill="none"
+        stroke-dasharray="94 999" />
+      <circle cx="50" cy="50" r="45" stroke="#dd0000" stroke-width="14" fill="none"
+        stroke-dasharray="94 999" stroke-dashoffset="-94" />
+      <circle cx="50" cy="50" r="45" stroke="#ffce00" stroke-width="14" fill="none"
+        stroke-dasharray="94 999" stroke-dashoffset="-188" />
+    </svg>
+
+    <span class="germany-text">100% MADE IN GERMANY</span>
+
+  </div>
+</footer>
     </div>
   </div>
 
