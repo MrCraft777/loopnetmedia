@@ -1,90 +1,154 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie-Richtlinie</title>
-    <style>
-        :root{
-            --bg: #d9e0e7;
-            --card: #ffffff;
-            --text: #707478;
-            --muted: #888;
-            --accent: #337ab7;
-            --shadow: rgba(0,0,0,0.12);
-        }
-        html,body{height:100%;}
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-            -webkit-font-smoothing:antialiased;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie-Richtlinie</title>
 
-        .container {
-            max-width: 900px;
-            margin: 6% auto;
-            padding: 28px 34px;
-            background-color: var(--card);
-            box-shadow: 0 6px 24px var(--shadow);
-            border-radius: 10px;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        h1 {
-            font-size: 28px;
-            margin-bottom: 6px;
-            color: var(--text);
-            letter-spacing: -0.02em;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        h2 {
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f3f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      color: #444;
+    }
 
-        p { margin: 0 0 12px 0; }
+    .form-container {
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      max-width: 780px;
+      width: 92%;
+      margin: 50px 0 80px;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+    }
 
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+    .inner-container {
+      padding: 36px 34px;
+    }
 
-        footer { text-align: center; margin-top: 18px; font-size: 12px; color: var(--muted); }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 400;
+      color: #6b6b6b;
+    }
 
-        @media (max-width:640px){
-            .container{ margin: 4% 12px; padding: 20px; }
-            h1{ font-size:22px }
-        }
-    </style>
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      font-weight: 400;
+      color: #5a5a5a;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .divider {
+      border-top: 1px solid #e2e2e2;
+      margin: 20px 0;
+    }
+
+    a {
+      color: #2f7dbd;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .inner-container {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Cookie-Richtlinie</h1>
 
-        <h2>Nur notwendige Cookies</h2>
-        <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Seite erforderlich sind. Solche Cookies sorgen z. B. dafür, dass sicherheitsrelevante oder funktionale Einstellungen gespeichert werden können.</p>
+  <div class="form-container">
 
-        <h2>Keine Tracking- oder Analyse-Cookies</h2>
-        <p>Es werden keine Tracking- oder Marketing-Cookies eingesetzt. Ihre Daten werden nicht zu Analyse- oder Werbezwecken gespeichert.</p>
+    <div class="inner-container">
+      <h1>Cookie-Richtlinie</h1>
+      <p>Angaben zur Verwendung von Cookies auf dieser Website</p>
+    </div>
 
-        <h2>Rechtsgrundlage</h2>
-        <p>Die Verwendung technisch notwendiger Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien und optimierten Bereitstellung seiner Dienste.</p>
+    <div class="inner-container">
 
-        <h2>Weitere Informationen</h2>
-        <p>Details zur Verarbeitung personenbezogener Daten finden Sie in unserer <a href="#">Datenschutzerklärung</a>.</p>
+      <h2>Nur notwendige Cookies</h2>
+      <p>
+        Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Seite erforderlich sind.
+        Sie ermöglichen grundlegende Funktionen wie Sicherheit und Seitennavigation.
+      </p>
 
-        <p style="margin-top:14px;">Wenn Sie Fragen zu dieser Cookie-Richtlinie haben, kontaktieren Sie uns gerne unter <a href="mailto:support@craftportal.de">support@craftportal.de</a>.</p>
+      <div class="divider"></div>
+
+      <h2>Keine Tracking- oder Marketing-Cookies</h2>
+      <p>
+        Es werden keine Tracking-, Analyse- oder Marketing-Cookies eingesetzt.
+        Es findet keine Auswertung Ihres Nutzerverhaltens zu Werbezwecken statt.
+      </p>
+
+      <div class="divider"></div>
+
+      <h2>Rechtsgrundlage</h2>
+      <p>
+        Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Grundlage des berechtigten Interesses
+        an einer technisch fehlerfreien Bereitstellung der Website.
+      </p>
+
+      <div class="divider"></div>
+
+      <h2>Weitere Informationen</h2>
+      <p>
+        Weitere Details zur Datenverarbeitung finden Sie in unserer
+        <a href="#">Datenschutzerklärung</a>.
+      </p>
+
+      <p>
+        Bei Fragen erreichen Sie uns unter:
+        <a href="mailto:info@loopnetmedia.com">info@loopnetmedia.com</a>
+      </p>
 
     </div>
 
     <footer>
-        © 2025 LoopnetMedia
+      © 2026 Loopnetmedia Studios
     </footer>
+
+  </div>
+
 </body>
 </html>
